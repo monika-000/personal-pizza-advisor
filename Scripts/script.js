@@ -26,8 +26,7 @@ function checkQuantity(){
 		else if(numOfPizzas <= 0){
 			document.getElementById("message").textContent = `Please provide a number`;
 		}
-		else{git add .
-			git commit -m
+		else{
 		//Calculate the best option for entered number of pizzas
 			optionThree = Math.floor(numOfPizzas / 3);
 			reminderThree = numOfPizzas % 3;
