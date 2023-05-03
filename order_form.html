@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Ordering form</title> 
+	<!-- <script src="linked.js"></script> -->
+
+</head>
+
+<link rel="stylesheet" href="CSS/calcStyle.css">
+<body>
+	<div class="col-container">
+		<div class="col" id="pizzaLeftCorner"></div>
+		<div class="col">
+			<h1>Pizza price calculator</h1>
+			<h2>Deals</h2>
+			<h3>1 pizza $6.45</h3>
+			<h3>&nbsp;&nbsp;&nbsp 2 pizzas $12.00</h3>
+			<h3>&nbsp;&nbsp;&nbsp 3 pizzas $14.00</h3>
+			<p>Enter the number of pizzas to calculate the order price</p>
+			<form action="#" method="post" id="orderForm" onsubmit="return checkQuantity()">
+				
+				<p>
+					<!-- <label for="quantity">Enter number of pizzas wanted:</label> -->
+					<input name="quantity" id="quantity">
+					
+				</p>
+				<p>
+					<input id ="calcBtn" value="Total cost" type="submit">
+
+				</p>
+			</form>
+				<div id="message">$0</div>
+				<script src="Scripts/script.js"></script>
+		</div>
+		<div class="col" id="pizzaRightCorner"></div>
+	</div>
+</body>
+</html>
