@@ -9,9 +9,9 @@
 function checkQuantity(){
 
 	let numOfPizzas, bestPrice, optionThree, reminderThree, optionTwo, reminderTwo, optionOne ;
-	let onePizzaPrice = 6.45;
-	let twoPizzasPrice = 12;
-	let threePizzasPrice = 14;
+	const onePizzaPrice = 6.45;
+	const twoPizzasPrice = 12;
+	const threePizzasPrice = 14;
 	numOfPizzas= document.getElementById("quantity").value;
 		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0){
 			document.getElementById("message").textContent = `Please provide a number`;
@@ -23,11 +23,8 @@ function checkQuantity(){
 			optionTwo = Math.floor(reminderThree / 2);
 			reminderTwo = reminderThree % 2;
 			optionOne = Math.floor(reminderTwo / 1);
-		//Prices for deals can be stored in const variables if the code gets longer
 			bestPrice = (threePizzasPrice * optionThree) + (twoPizzasPrice * optionTwo) + (onePizzaPrice * optionOne);
-		
 		//Display the best price for enetered number of pizzas
-			//document.getElementById("message").innerHTML = `The ammount to pay is $ ${bestPrice}`;
 			document.getElementById("message").textContent = `$${bestPrice}`;
 		}
 		return false;
