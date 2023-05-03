@@ -13,17 +13,7 @@ function checkQuantity(){
 	let twoPizzasPrice = 12;
 	let threePizzasPrice = 14;
 	numOfPizzas= document.getElementById("quantity").value;
-		if (numOfPizzas == ""){
-			document.getElementById("message").textContent = `Please provide a number`;
-		}
-		else if(isNaN(numOfPizzas))
-		{
-			document.getElementById("message").textContent = `Please provide a number`;
-		}
-		else if(numOfPizzas %  1 != 0){
-			document.getElementById("message").textContent = `Please provide a number`;
-		}
-		else if(numOfPizzas <= 0){
+		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0){
 			document.getElementById("message").textContent = `Please provide a number`;
 		}
 		else{
