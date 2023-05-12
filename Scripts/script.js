@@ -9,9 +9,9 @@
 function checkQuantity(){
 
 	let numOfPizzas, bestPrice, optionThree, reminderThree, optionTwo, reminderTwo, optionOne ;
-	const onePizzaPrice = 6.45;
-	const twoPizzasPrice = 12;
-	const threePizzasPrice = 14;
+	const onePizzaPrice = 8.50;
+	const twoPizzasPrice = 11;
+	const threePizzasPrice = 13;
 	numOfPizzas= document.getElementById("quantity").value;
 		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0){
 			document.getElementById("message").textContent = `Please provide a number`;
