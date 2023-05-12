@@ -12,11 +12,18 @@
 		<div class="col">
 			<h1>Pizza price calculator</h1>
 			<h2>Deals</h2>
-			<h3>1 pizza $8.50</h3>
-			<h3>&nbsp;&nbsp;&nbsp 2 pizzas $11.00</h3>
-			<h3>&nbsp;&nbsp;&nbsp 3 pizzas $13.00</h3>
-			<p>Enter the number of pizzas to calculate the order price</p>
-			<form action="#" method="post" id="orderForm" onsubmit="return checkQuantity()">
+			<h3>1 pizza S: $6.50 L: $8.50 </h3>
+			<h3>&nbsp;2 pizzas S: $9.00 L: $11.00</h3>
+			<h3>&nbsp;3 pizzas S: $12.00 L: $14.00</h3>
+			<p>How hungry are you?</p>
+			<div id="radioSection">
+				<input type="radio" id="hungry" value="hungry" name="hungryValue">
+				<label for="hungry">Hungry</label>
+				<input type="radio" id="extraHungry" value="extraHungry" name="hungryValue">
+				<label for="extraHungry">Extra hungry</label>
+			</div>
+			<p>For how many people is the order?</p>
+			<!-- <form action="#" method="post" id="orderForm" onsubmit="return calculateThePrice()"> -->
 				
 				<p>
 					<input name="quantity" id="quantity">
@@ -26,8 +33,9 @@
 					<input id ="calcBtn" value="Total cost" type="submit">
 
 				</p>
-			</form>
+			<!-- </form> -->
 				<div id="message">$0</div>
+				<p id="recomendationMessage"></p>
 				<script src="Scripts/script.js"></script>
 		</div>
 		<div class="col" id="pizzaRightCorner"></div>

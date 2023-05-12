@@ -1,20 +1,39 @@
 /** 
 * @file Calculate best price   
-* @function checkQuantity()
-* @description This fucntion calculates best price for entered number of pizzas
+* @function calculateThePrice()
+* @description This fucntion calculates best price order type and price
 * @returs {boolean} false
 * @version 1.1.0
 * @author Monika Przybylska
 */
-function checkQuantity(){
+//function checkNumberOfPeople(){
 
-	let numOfPizzas, bestPrice, optionThree, reminderThree, optionTwo, reminderTwo, optionOne ;
-	const onePizzaPrice = 8.50;
-	const twoPizzasPrice = 11;
-	const threePizzasPrice = 13;
-	numOfPizzas= document.getElementById("quantity").value;
-		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0){
-			document.getElementById("message").textContent = `Please provide a number`;
+	let bestPrice, optionThree, reminderThree, optionTwo, reminderTwo, optionOne ;
+	const onePizzaPriceSmall = 6.50;
+	const onePizzaPriceLarge = 8.50;
+	const twoPizzasPriceSmall = 9;
+	const twoPizzasPriceLarge = 11;
+	const threePizzasPriceSmall = 12;
+	const threePizzasPriceLarge = 14;
+	let numOfPizzas= document.getElementById("quantity").value;
+	let calcBtn = document.getElementById("calcBtn");
+	let radioBtn = document.getElementsByName("hungryValue");
+	//radioBtn = false;
+	
+	calcBtn.addEventListener('click', ()=>{
+		for(let i = 0; i< radioBtn.length; i++){
+			if(radioBtn[i].checked){
+				console.log("checked")
+			}
+		}
+	});
+	
+	// radioBtn.addEventListener("click", () =>{
+	// 	radioBtn = true;
+
+	// });
+		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0 || radioBtn == false){
+			document.getElementById("message").textContent = `Please provide a number and choose how hungry you are`;
 		}
 		else{
 		//Calculate the best option for entered number of pizzas
@@ -27,5 +46,9 @@ function checkQuantity(){
 		//Display the best price for enetered number of pizzas
 			document.getElementById("message").textContent = `$${bestPrice}`;
 		}
-		return false;
-}	
+		//return false;
+//}	
+
+function calculateThePrice(){
+
+}
