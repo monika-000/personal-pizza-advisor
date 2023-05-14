@@ -21,31 +21,33 @@
 	//radioBtn = false;
 	
 	calcBtn.addEventListener('click', ()=>{
+		let  radioBtnValue;
+		debugger;
 		for(let i = 0; i< radioBtn.length; i++){
 			if(radioBtn[i].checked){
-				console.log("checked")
+				radioBtnValue = radioBtn[i].value;
 			}
 		}
-	});
-	
-	// radioBtn.addEventListener("click", () =>{
-	// 	radioBtn = true;
-
-	// });
-		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0 || radioBtn == false){
+		debugger;
+		if (numOfPizzas == "" || isNaN(numOfPizzas) || numOfPizzas %  1 != 0 || numOfPizzas <= 0 || radioBtnValue == "undefined"){
 			document.getElementById("message").textContent = `Please provide a number and choose how hungry you are`;
 		}
 		else{
-		//Calculate the best option for entered number of pizzas
-			optionThree = Math.floor(numOfPizzas / 3);
-			reminderThree = numOfPizzas % 3;
-			optionTwo = Math.floor(reminderThree / 2);
-			reminderTwo = reminderThree % 2;
-			optionOne = Math.floor(reminderTwo / 1);
-			bestPrice = (threePizzasPrice * optionThree) + (twoPizzasPrice * optionTwo) + (onePizzaPrice * optionOne);
-		//Display the best price for enetered number of pizzas
-			document.getElementById("message").textContent = `$${bestPrice}`;
-		}
+			console.log("Hi")
+			// //Calculate the best option for entered number of pizzas
+			// 	optionThree = Math.floor(numOfPizzas / 3);
+			// 	reminderThree = numOfPizzas % 3;
+			// 	optionTwo = Math.floor(reminderThree / 2);
+			// 	reminderTwo = reminderThree % 2;
+			// 	optionOne = Math.floor(reminderTwo / 1);
+			// 	bestPrice = (threePizzasPrice * optionThree) + (twoPizzasPrice * optionTwo) + (onePizzaPrice * optionOne);
+			// //Display the best price for enetered number of pizzas
+			// 	document.getElementById("message").textContent = `$${bestPrice}`;
+			}
+	});
+	
+		
+		
 		//return false;
 //}	
 
