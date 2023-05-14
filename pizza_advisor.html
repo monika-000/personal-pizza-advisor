@@ -10,32 +10,33 @@
 	<div class="col-container">
 		<div class="col" id="pizzaLeftCorner"></div>
 		<div class="col">
-			<h1>Pizza price calculator</h1>
-			<h2>Deals</h2>
-			<h3>1 pizza S: $6.50 L: $8.50 </h3>
+			<h1>Personal pizza advisor</h1>
+			<!-- <h2>Deals</h2> -->
+			<!-- <h3>1 pizza S: $6.50 L: $8.50 </h3>
 			<h3>&nbsp;2 pizzas S: $9.00 L: $11.00</h3>
-			<h3>&nbsp;3 pizzas S: $12.00 L: $14.00</h3>
-			<p>How hungry are you?</p>
+			<h3>&nbsp;3 pizzas S: $12.00 L: $14.00</h3> -->
+			<h2>How hungry are you?</h2>
 			<div id="radioSection">
 				<input type="radio" id="hungry" value="hungry" name="hungryValue" required>
 				<label for="hungry">Hungry</label>
 				<input type="radio" id="extraHungry" value="extraHungry" name="hungryValue">
 				<label for="extraHungry">Extra hungry</label>
 			</div>
-			<p>For how many people is the order?</p>
+			<h2>For how many people is the order?</h2>
 			<!-- <form action="#" method="post" id="orderForm" onsubmit="return calculateThePrice()"> -->
 				
 				<p>
 					<input name="quantity" id="quantity" required>
 					
 				</p>
-				<p>
+				<!-- <p>
 					<input id ="calcBtn" value="Total cost" type="submit">
 
-				</p>
+				</p> -->
 			<!-- </form> -->
-				<div id="message">$0</div>
-				<p id="recomendationMessage"></p>
+			<!-- Basedo standard pizza sizes we recommend ... -->
+				<div id="message"></div>
+				<!-- <p id="recomendationMessage"></p> -->
 				<script src="Scripts/script.js"></script>
 		</div>
 		<div class="col" id="pizzaRightCorner"></div>
