@@ -11,7 +11,7 @@
 	let radioBtn = document.getElementsByName("hungryValue");
 	
 	calcBtn.addEventListener('click', ()=>{
-		let  radioBtnValue;
+		let radioBtnValue;
 		let smallPizza = 6;
 		let mediumPizza = 8;
 		let largePizza = 10;
@@ -32,28 +32,37 @@
 				case radioBtnValue = "Hungry":
 					totalSlices = numOfPeople * 5;
 				//5 slices of pizza for hungry
-				
+					large = Math.floor(totalSlices / largePizza);
+					reminderLarge = totalSlices % largePizza;
+					// if(reminderLarge != 0){
+						debugger;
+						if(reminderLarge > smallPizza){
+							medium = Math.ceil(reminderLarge / mediumPizza)
+							small = 0;
+							//reminderMedium = reminderLarge % mediumPizza;
+						}
+						else{
+							medium = 0;
+							small = Math.ceil(reminderLarge / smallPizza);
+						}
+					break;
+					// }
 				case radioBtnValue = "Extra hungry":
 				//6 slices ofpizza for extra hungry
 					totalSlices = numOfPeople * 6;
-					large = totalSlices / largePizza;
+					large = Math.floor(totalSlices / largePizza);
 					reminderLarge = totalSlices % largePizza;
-					if(reminderLarge > smallPizza){
-						medium = reminderLarge / mediumPizza;
-					}
-					small = reminderLarge / smallPizza;
-					
+						if(reminderLarge > smallPizza){
+							medium = Math.ceil(reminderLarge / mediumPizza);
+							small = 0;
+						}
+						else{
+							medium = 0;
+							small = Math.ceil(reminderLarge / smallPizza);
+						}
+					break;
 			}
-			 
-			//Calculate the best option for entered number of pizzas
-				optionThree = Math.floor(numOfPeople / 3);
-				reminderThree = numOfPeople % 3;
-				optionTwo = Math.floor(reminderThree / 2);
-				reminderTwo = reminderThree % 2;
-				optionOne = Math.floor(reminderTwo / 1);
-				bestPrice = (threePizzasPrice * optionThree) + (twoPizzasPrice * optionTwo) + (onePizzaPrice * optionOne);
-			//Display the best price for enetered number of pizzas
-				document.getElementById("message").textContent = `$${bestPrice}`;
+			document.getElementById("message").textContent = `We recommend buying ${large} large pizza(s), ${medium} medium pizza(s) and ${small} small pizza(s)`
 			}
 	});
 	
