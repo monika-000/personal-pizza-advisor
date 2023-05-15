@@ -28,25 +28,27 @@
 		else{
 			let totalSlices;
 			let large, medium, small, reminderLarge;
+			let message =[];
 			switch (radioBtnValue){
 				case radioBtnValue = "Hungry":
 					totalSlices = numOfPeople * 5;
 				//5 slices of pizza for hungry
 					large = Math.floor(totalSlices / largePizza);
 					reminderLarge = totalSlices % largePizza;
-					// if(reminderLarge != 0){
-						debugger;
+					if(large > 0){
+
+						message.push(`${large} large pizza(s)`);
+						console.log(message)
+					}
 						if(reminderLarge > smallPizza){
-							medium = Math.ceil(reminderLarge / mediumPizza)
-							small = 0;
-							//reminderMedium = reminderLarge % mediumPizza;
+							medium = Math.ceil(reminderLarge / mediumPizza);
+							message.push(`${medium} medium pizza(s)`);
 						}
 						else{
-							medium = 0;
 							small = Math.ceil(reminderLarge / smallPizza);
+							message.push(`${small} small pizza(s)`)
 						}
 					break;
-					// }
 				case radioBtnValue = "Extra hungry":
 				//6 slices ofpizza for extra hungry
 					totalSlices = numOfPeople * 6;
@@ -62,7 +64,8 @@
 						}
 					break;
 			}
-			document.getElementById("message").textContent = `We recommend buying ${large} large pizza(s), ${medium} medium pizza(s) and ${small} small pizza(s)`
+			message = message.join(", ")
+			document.getElementById("message").textContent = `We recommend buing ${message}`
 			}
 	});
 	
@@ -71,6 +74,28 @@
 		//return false;
 //}	
 
-function calculateThePrice(){
+function calculateThePrice(v){
+	const slices = v == "Hungry" ? 5 : 6;
+	let totalSlices;
+			let large, medium, small, reminderLarge;
+			let message =[];
 
+			
+					totalSlices = numOfPeople * 5;
+				//5 slices of pizza for hungry
+					large = Math.floor(totalSlices / largePizza);
+					reminderLarge = totalSlices % largePizza;
+					if(large > 0){
+
+						message.push(`${large} large pizza(s)`);
+						console.log(message)
+					}
+						if(reminderLarge > smallPizza){
+							medium = Math.ceil(reminderLarge / mediumPizza);
+							message.push(`${medium} medium pizza(s)`);
+						}
+						else{
+							small = Math.ceil(reminderLarge / smallPizza);
+							message.push(`${small} small pizza(s)`)
+						}
 }
