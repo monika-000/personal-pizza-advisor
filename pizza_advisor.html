@@ -11,10 +11,6 @@
 		<div class="col" id="pizzaLeftCorner"></div>
 		<div class="col">
 			<h1>Personal pizza advisor</h1>
-			<!-- <h2>Deals</h2> -->
-			<!-- <h3>1 pizza S: $6.50 L: $8.50 </h3>
-			<h3>&nbsp;2 pizzas S: $9.00 L: $11.00</h3>
-			<h3>&nbsp;3 pizzas S: $12.00 L: $14.00</h3> -->
 			<h2>How hungry are you?</h2>
 			<div id="radioSection">
 				<input type="radio" id="hungry" value="hungry" name="hungryValue" required>
@@ -23,17 +19,10 @@
 				<label for="extraHungry">Extra hungry</label>
 			</div>
 			<h2>For how many people is the order?</h2>
-			<!-- <form action="#" method="post" id="orderForm" onsubmit="return calculateThePrice()"> -->
 				<p>
 					<input name="quantity" id="quantity" required>
-					
 				</p>
-				<p>
-					<input id ="calcBtn" value="Total cost" type="submit">
-
-			 	</p> 
-			<!-- </form> -->
-			<!-- Basedo standard pizza sizes we recommend ... -->
+				<button id ="calcBtn">Calculate</button>
 				<div id="message"></div>
 				<script src="Scripts/script.js"></script>
 		</div>

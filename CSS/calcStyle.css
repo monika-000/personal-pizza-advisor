@@ -30,6 +30,7 @@ h2{
 .col {
     display: table-cell; 
     width: 30%;
+    text-align: center;
 }
 #pizzaRightCorner{
     background-image: url("../Pictures/pizza-g8e5f09224_640.png");
