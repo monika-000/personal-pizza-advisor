@@ -12,10 +12,6 @@
 	
 	calcBtn.addEventListener('click', ()=>{
 		let radioBtnValue;
-		let smallPizza = 6;
-		let mediumPizza = 8;
-		let largePizza = 10;
-		let recommendedNumber;
 		let numOfPeople= document.getElementById("quantity").value;
 		for(let i = 0; i< radioBtn.length; i++){
 			if(radioBtn[i].checked){
@@ -26,45 +22,46 @@
 			document.getElementById("message").textContent = `Please provide a number and choose how hungry you are`;
 		}
 		else{
-			let totalSlices;
-			let large, medium, small, reminderLarge;
-			let message =[];
-			switch (radioBtnValue){
-				case radioBtnValue = "Hungry":
-					totalSlices = numOfPeople * 5;
-				//5 slices of pizza for hungry
-					large = Math.floor(totalSlices / largePizza);
-					reminderLarge = totalSlices % largePizza;
-					if(large > 0){
+			let message = calculateThePrice(numOfPeople, radioBtnValue);
+			// let totalSlices;
+			// let large, medium, small, reminderLarge;
+			// let message =[];
+			// switch (radioBtnValue){
+			// 	case radioBtnValue = "Hungry":
+			// 		totalSlices = numOfPeople * 5;
+			// 	//5 slices of pizza for hungry
+			// 		large = Math.floor(totalSlices / largePizza);
+			// 		reminderLarge = totalSlices % largePizza;
+			// 		if(large > 0){
 
-						message.push(`${large} large pizza(s)`);
-						console.log(message)
-					}
-						if(reminderLarge > smallPizza){
-							medium = Math.ceil(reminderLarge / mediumPizza);
-							message.push(`${medium} medium pizza(s)`);
-						}
-						else{
-							small = Math.ceil(reminderLarge / smallPizza);
-							message.push(`${small} small pizza(s)`)
-						}
-					break;
-				case radioBtnValue = "Extra hungry":
-				//6 slices ofpizza for extra hungry
-					totalSlices = numOfPeople * 6;
-					large = Math.floor(totalSlices / largePizza);
-					reminderLarge = totalSlices % largePizza;
-						if(reminderLarge > smallPizza){
-							medium = Math.ceil(reminderLarge / mediumPizza);
-							small = 0;
-						}
-						else{
-							medium = 0;
-							small = Math.ceil(reminderLarge / smallPizza);
-						}
-					break;
-			}
-			message = message.join(", ")
+			// 			message.push(`${large} large pizza(s)`);
+			// 			console.log(message)
+			// 		}
+			// 			if(reminderLarge > smallPizza){
+			// 				medium = Math.ceil(reminderLarge / mediumPizza);
+			// 				message.push(`${medium} medium pizza(s)`);
+			// 			}
+			// 			else{
+			// 				small = Math.ceil(reminderLarge / smallPizza);
+			// 				message.push(`${small} small pizza(s)`)
+			// 			}
+			// 		break;
+			// 	case radioBtnValue = "Extra hungry":
+			// 	//6 slices ofpizza for extra hungry
+			// 		totalSlices = numOfPeople * 6;
+			// 		large = Math.floor(totalSlices / largePizza);
+			// 		reminderLarge = totalSlices % largePizza;
+			// 			if(reminderLarge > smallPizza){
+			// 				medium = Math.ceil(reminderLarge / mediumPizza);
+			// 				small = 0;
+			// 			}
+			// 			else{
+			// 				medium = 0;
+			// 				small = Math.ceil(reminderLarge / smallPizza);
+			// 			}
+			// 		break;
+			// }
+			//message = message.join(", ")
 			document.getElementById("message").textContent = `We recommend buing ${message}`
 			}
 	});
@@ -74,28 +71,31 @@
 		//return false;
 //}	
 
-function calculateThePrice(v){
+function calculateThePrice(n,v){
 	const slices = v == "Hungry" ? 5 : 6;
 	let totalSlices;
-			let large, medium, small, reminderLarge;
-			let message =[];
+	let largePizza = 10;
+	let mediumPizza = 8;
+	let smallPizza = 6;
+	let large, medium, small, reminderLarge;
+	let message =[];
 
-			
-					totalSlices = numOfPeople * 5;
-				//5 slices of pizza for hungry
-					large = Math.floor(totalSlices / largePizza);
-					reminderLarge = totalSlices % largePizza;
-					if(large > 0){
-
-						message.push(`${large} large pizza(s)`);
-						console.log(message)
-					}
-						if(reminderLarge > smallPizza){
-							medium = Math.ceil(reminderLarge / mediumPizza);
-							message.push(`${medium} medium pizza(s)`);
-						}
-						else{
-							small = Math.ceil(reminderLarge / smallPizza);
-							message.push(`${small} small pizza(s)`)
-						}
+	totalSlices = n * slices;
+	large = Math.floor(totalSlices / largePizza);
+	reminderLarge = totalSlices % largePizza;
+	if(large > 0){
+		message.push(`${large} large pizza(s)`);
+	}
+	if(reminderLarge > smallPizza){
+		medium = Math.ceil(reminderLarge / mediumPizza);
+		message.push(`${medium} medium pizza(s)`);
+	}
+	else{
+		small = Math.ceil(reminderLarge / smallPizza);
+		if(small > 0){
+			message.push(`${small} small pizza(s)`)
+		}
+	}
+	message = message.join(", ")
+	return message;
 }
