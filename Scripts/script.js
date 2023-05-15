@@ -27,6 +27,7 @@
 		}
 		else{
 			let totalSlices;
+			let large, medium, small, reminderLarge;
 			switch (radioBtnValue){
 				case radioBtnValue = "Hungry":
 					totalSlices = numOfPeople * 5;
@@ -35,7 +36,13 @@
 				case radioBtnValue = "Extra hungry":
 				//6 slices ofpizza for extra hungry
 					totalSlices = numOfPeople * 6;
-
+					large = totalSlices / largePizza;
+					reminderLarge = totalSlices % largePizza;
+					if(reminderLarge > smallPizza){
+						medium = reminderLarge / mediumPizza;
+					}
+					small = reminderLarge / smallPizza;
+					
 			}
 			 
 			//Calculate the best option for entered number of pizzas
