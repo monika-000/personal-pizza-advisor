@@ -1,9 +1,9 @@
 /** 
-* @file Calculate best price   
+* @file Recommend the best pizza order (number and size of pizzas)   
 * @function calculateThePizzaReq()
-* @description This fucntion calculates best price order type and price
-* @returs {boolean} false
-* @version 1.1.0
+* @description This fucntion calculates recommended number of pizzas for entered numberof people
+* @returs {array} string
+* @version 1.1.1
 * @author Monika Przybylska
 */
 
